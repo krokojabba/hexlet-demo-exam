@@ -25,13 +25,14 @@ create table partners (
 	fio varchar(50) not null,
 	phone_number varchar(50) not null,
 	email varchar(50) not null,
-	address varchar(255) not null
+	address varchar(255) not null,
+	rating bigint not null
 );
 
-insert into partners (partner_type_id, name, fio, phone_number, email, address) values 
-	(1, 'test_name_1', 'test_fio_1', '+7111111111', 'test_email_1@example.com', 'test_adress_1'),
-	(2, 'test_name_2', 'test_fio_2', '+7222222222', 'test_email_2@example.com', 'test_adress_2'),
-	(3, 'test_name_3', 'test_fio_3', '+7333333333', 'test_email_3@example.com', 'test_adress_3')
+insert into partners (partner_type_id, name, fio, phone_number, email, address, rating) values 
+	(1, 'test_name_1', 'test_fio_1', '+7111111111', 'test_email_1@example.com', 'test_adress_1', 10),
+	(2, 'test_name_2', 'test_fio_2', '+7222222222', 'test_email_2@example.com', 'test_adress_2', 20),
+	(3, 'test_name_3', 'test_fio_3', '+7333333333', 'test_email_3@example.com', 'test_adress_3', 30)
 ;
 
 select * from partners;
@@ -78,7 +79,7 @@ create table sales (
 insert into sales (product_id, partner_id, amount, sale_date) values 
 	(1, 1, 10000.0, '01-01-2024'),
 	(2, 2, 20000.0, '02-01-2024'),
-	(1, 3, 30000.0, '03-01-2024')
+	(1, 2, 30000.0, '03-01-2024')
 ;
 
 select * from sales;
